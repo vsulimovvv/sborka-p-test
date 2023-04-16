@@ -9,4 +9,3 @@ temp/
 package-lock.json
 yarn.lock
 
-gulp-tasks
