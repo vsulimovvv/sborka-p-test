@@ -1,0 +1,283 @@
+<section class="cart">
+  <div class="container">
+    <div class="cart__wrapper">
+      <div class="cart__left">
+        <div class="cart__steps cart-steps">
+          <div class="cart-steps__top">
+            <div class="cart-steps__step cart-steps__step--active">
+              <div class="cart-steps__line">
+                <span class="cart-steps__line-fill"></span>
+              </div>
+              <div class="cart-steps__item">
+                <span class="cart-steps__count">1</span>
+                <p>Account</p>
+              </div>
+            </div>
+            <div class="cart-steps__step cart-steps__step--active">
+              <div class="cart-steps__line">
+                <span class="cart-steps__line-fill"></span>
+              </div>
+              <div class="cart-steps__item">
+                <span class="cart-steps__count">2</span>
+                <p>Shipping</p>
+              </div>
+            </div>
+            <div class="cart-steps__step cart-steps__step--next">
+              <div class="cart-steps__line">
+                <span class="cart-steps__line-fill"></span>
+              </div>
+              <div class="cart-steps__item">
+                <span class="cart-steps__count">3</span>
+                <p>Billing</p>
+              </div>
+            </div>
+            <div class="cart-steps__step">
+              <div class="cart-steps__line">
+                <span class="cart-steps__line-fill"></span>
+              </div>
+              <div class="cart-steps__item">
+                <span class="cart-steps__count">4</span>
+                <p>Review</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cart__content">
+          <h2 class="cart__title">Billing Information</h2>
+
+          <form class="cart__form form-submit">
+            <div class="form-submit__radios">
+              <label class="custom-checkbox">
+                <input
+                  class="custom-checkbox__input"
+                  name="payment-method"
+                  type="radio"
+                  checked
+                />
+                <span class="custom-checkbox__box"></span>
+                <span class="custom-checkbox__text">
+                  Pay with Credit Card
+                </span>
+              </label>
+              <label class="custom-checkbox">
+                <input
+                  class="custom-checkbox__input"
+                  name="payment-method"
+                  type="radio"
+                />
+                <span class="custom-checkbox__box"></span>
+                <span class="custom-checkbox__text">
+               		<img src={% inline 'paypal.svg' %} alt="paypal" />
+                </span>
+              </label>
+            </div>
+
+            <div class="form-submit__credit-card">
+              <div class="form-submit__group">
+                <label class="form-submit__label" for="card-name">
+                  Name on card
+                </label>
+                <input
+                  class="form-submit__input"
+                  type="text"
+                  id="card-name"
+                  placeholder="Placeholder Text"
+                />
+              </div>
+              <div class="form-submit__group">
+                <label class="form-submit__label" for="cart-number">
+                  Card number
+                </label>
+                <div class="form-submit__inputs">
+                  <input
+                    class="form-submit__input"
+                    type="text"
+                    id="cart-number"
+                  />
+                  <input class="form-submit__input" type="text" />
+                  <input class="form-submit__input" type="text" />
+                  <input class="form-submit__input" type="text" />
+                </div>
+              </div>
+              <div class="form-submit__groups">
+                <div class="form-submit__group">
+                  <label class="form-submit__label" for="expire-date">
+                    Expire date
+                  </label>
+
+                  <input
+                    class="form-submit__input"
+                    type="text"
+                    id="expire-date"
+                  />
+                </div>
+                <div class="form-submit__group">
+                  <label class="form-submit__label" for="cw-code">
+                    CVV code
+                    <span class="form-submit__question-mark">
+                     	{{ icon({ iconName: 'question-mark' }) }}
+                      <small class="tooltip">Card Verification Value </small>
+                    </span>
+                  </label>
+
+                  <input class="form-submit__input" type="text" id="cw-code" />
+                </div>
+              </div>
+            </div>
+
+            <div class="form-submit__checkboxes">
+              <label class="custom-checkbox custom-checkbox--square">
+                <input class="custom-checkbox__input" type="checkbox" checked />
+                <span class="custom-checkbox__box"></span>
+                <span class="custom-checkbox__text">
+                  Save information of this credit card
+                </span>
+              </label>
+              <label class="custom-checkbox custom-checkbox--square">
+                <input class="custom-checkbox__input" type="checkbox" />
+                <span class="custom-checkbox__box"></span>
+                <span class="custom-checkbox__text">
+                  I accept the <a href="#"> terms and comditions</a> <br />
+                  and the
+                  <a href="#"> Privacy Policies</a>
+                </span>
+              </label>
+            </div>
+
+            <div class="form-submit__btns">
+								{{ button({
+									className: 'form-submit__btn btn btn--border',
+									children: 'Back'
+								}) }}
+								{{ button({
+									className: 'form-submit__btn btn',
+									children: 'Check Out'
+								}) }}
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="cart__right cart-right">
+        <div class="cart-right__inner">
+          <div class="cart-right__box">
+            <h2 class="cart-right__title">My basket</h2>
+
+            <ul class="cart-right__list">
+              <li class="cart-right__item">
+                <article class="cart-item" id="1">
+                  <img
+                    class="cart-item__img"
+                    src="assets/images/1.png"
+                    alt="img"
+                  />
+
+                  <div class="cart-item__info">
+                    <h3 class="cart-item__title">
+                      Amet minim mollit non deserunt ullamco est sit
+                    </h3>
+                    <div class="cart-item__actions">
+                      <div class="cart-item__counter counter">
+                        <button
+                          class="counter__btn counter__btn--decrement"
+                          data-target="increment"
+                          type="button"
+                        >
+                          {{ icon({ iconName: 'minus' }) }}
+                        </button>
+                        <input class="counter__input" type="text" value="1" />
+                        <button
+                          class="counter__btn counter__btn--increment"
+                          data-target="decrement"
+                        >
+                          {{ icon({ iconName: 'plus' }) }}
+                        </button>
+                      </div>
+                      <div class="cart-item__price">$ <span>525</span></div>
+                    </div>
+                  </div>
+
+                  <button class="cart-item__remove" type="button">
+                   {{ icon({ iconName: 'close' }) }}
+                  </button>
+                </article>
+              </li>
+              <li class="cart-right__item">
+                <article class="cart-item" id="2">
+                   <img
+                    class="cart-item__img"
+                    src="assets/images/2.png"
+                    alt="img"
+                  />
+                  <div class="cart-item__info">
+                    <h3 class="cart-item__title">
+                     Amet minim mollit non
+                    </h3>
+                    <div class="cart-item__actions">
+                      <div class="cart-item__counter counter">
+                        <button
+                          class="counter__btn counter__btn--decrement"
+                          data-target="increment"
+                          type="button"
+                        >
+                           {{ icon({ iconName: 'minus' }) }}
+                        </button>
+                        <input class="counter__input" type="text" value="1" />
+                        <button
+                          class="counter__btn counter__btn--increment"
+                          data-target="decrement"
+                        >
+                          {{ icon({ iconName: 'plus' }) }}
+                        </button>
+                      </div>
+                      <div class="cart-item__price">$ <span>525</span></div>
+                    </div>
+                  </div>
+
+                  <button class="cart-item__remove" type="button">
+                  {{ icon({ iconName: 'close' }) }}
+                  </button>
+                </article>
+              </li>
+            </ul>
+          </div>
+
+          <div class="cart-right__box">
+            <h2 class="cart-right__title">Promo code</h2>
+            <form class="form-promocode">
+              <label class="form-promocode__label">
+                <input
+                  class="form-promocode__input"
+                  type="text"
+                  placeholder="form-promocode"
+                />
+              </label>
+              <button class="form-promocode__btn btn">Apply</button>
+            </form>
+          </div>
+
+          <div class="cart-right__box">
+            <ul class="total">
+              <li class="total__item">
+                <div>Subtotal</div>
+                <div>$ <span class="subtotal-price">1 050</span></div>
+              </li>
+              <li class="total__item">
+                <div>Tax</div>
+                <div>$ <span class="tax-price">100</span></div>
+              </li>
+              <li class="total__item">
+                <div>Shipping</div>
+                <div>$ <span class="shipping-price">150</span></div>
+              </li>
+              <li class="total__item">
+                <div>Total</div>
+                <div>$ <span class="total-price">1 300</span></div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

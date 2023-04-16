@@ -1,0 +1,13 @@
+.wrapper {
+	position: relative;
+}
+
+.container {
+	max-width: $bp-container;
+	padding: 0px 30px;
+	margin: 0 auto;
+
+	@include breakpointsMaxW($bp-576) {
+		padding: 0 10px;
+	}
+}

@@ -8,5 +8,5 @@ temp/
 *.sublime*
 package-lock.json
 yarn.lock
-src
+
 gulp-tasks
